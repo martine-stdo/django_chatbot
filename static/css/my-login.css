@@ -3,8 +3,8 @@ html,body {
 }
 
 body.my-login-page {
-	background-color: #f7f9fb;
 	font-size: 14px;
+	background: url("https://api.aqcoder.cn/random") center center / cover no-repeat;
 }
 
 .my-login-page .brand {
@@ -20,6 +20,7 @@ body.my-login-page {
 .message-container {
 	background-color: red;
 	padding: 10px;
+
   }
   
   .message-container p {
@@ -29,6 +30,7 @@ body.my-login-page {
 
 .my-login-page .brand img {
 	width: 100%;
+
 }
 
 .my-login-page .card-wrapper {
@@ -38,10 +40,14 @@ body.my-login-page {
 .my-login-page .card {
 	border-color: transparent;
 	box-shadow: 0 4px 8px rgba(0,0,0,.05);
+
+	
 }
 
 .my-login-page .card.fat {
 	padding: 10px;
+	opacity: 0.95;
+
 }
 
 .my-login-page .card .card-title {
