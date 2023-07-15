@@ -8,7 +8,7 @@ from .models import Chat
 
 from django.utils import timezone
 
-openai_api_key = "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"
+openai_api_key = "输入你的openai api key"
 openai.api_key = openai_api_key
 # 向openai发送提问的函数
 
