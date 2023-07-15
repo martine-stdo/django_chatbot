@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kodinger">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>My Login Page &mdash; Bootstrap 4 Login Page Snippet</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/my-login.css' %}">
+</head>
+<body class="my-login-page">
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					<div class="brand">
+						<img src="{% static 'images/logo.jpg' %}" alt="logo">
+					</div>
+					<div class="card fat">
+						<div id="message-container"></div>
+
+						<div class="card-body">
+							<h4 class="card-title">注册</h4>
+							<form method="POST" class="my-login-validation" novalidate="">
+								{%csrf_token%}
+								<div class="form-group">
+									<label for="Username">用户名</label>
+									<input id="Username" type="text" class="form-control" name="Username" required autofocus>
+									<div class="invalid-feedback">
+										请输入用户名
+									</div>
+								</div>
+
+								
+
+								<div class="form-group">
+									<label for="password">密码</label>
+									<input id="password" type="password" class="form-control" name="password" required data-eye>
+									<div class="invalid-feedback">
+										需要输入密码
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="ConfirmPassword">再次输入密码</label>
+									<input id="ConfirmPassword" type="password" class="form-control" name="ConfirmPassword" required>
+									<div class="invalid-feedback">
+										需要再次输入密码
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="custom-checkbox custom-control">
+										<input type="checkbox" name="agree" id="agree" class="custom-control-input" required="">
+										<label for="agree" class="custom-control-label">同意 <a href="#">我们的条款和条件</a></label>
+										<div class="invalid-feedback">
+											你必须同意我们的条款和条件
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group m-0">
+									<button type="submit" class="btn btn-primary btn-block">
+										注册
+									</button>
+								</div>
+								<div class="mt-4 text-center">
+									已有账号? <a href="login">登录</a>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="footer">
+						Copyright &copy; 2023 &mdash; nighterdream
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{% static 'js/my-login.js' %}"></script>
+	<script>
+		{% if error_message %}
+		  showMessage("{{ error_message }}");
+		{% endif %}
+		</script>
+		
+</body>
+</html>
